@@ -21,7 +21,7 @@ SELECT
   r.TITLE_ID, 
   r.AUTHOR_ID,
   SUM(r.ROYALTY) AS 'AGG_ROYALTY',
-  SUM (r.ADVANCE) AS 'AGG_ADVANCE'
+  r.ADVANCE AS 'AGG_ADVANCE'
   FROM( SELECT 
     s.title_id AS 'TITLE_ID',
     ta.au_id AS 'AUTHOR_ID',
@@ -52,7 +52,7 @@ FROM (
   r.TITLE_ID, 
   r.AUTHOR_ID,
   SUM(r.ROYALTY) AS 'AGG_ROYALTY',
-  SUM (r.ADVANCE) AS 'AGG_ADVANCE'
+  r.ADVANCE AS 'AGG_ADVANCE'
   FROM( SELECT 
     s.title_id AS 'TITLE_ID',
     ta.au_id AS 'AUTHOR_ID',
@@ -64,8 +64,8 @@ FROM (
     LEFT JOIN titles ti ON ti.title_id = s.title_id
     LEFT JOIN titleauthor ta ON ta.title_id = s.title_id) r
   GROUP BY r.AUTHOR_ID, r.TITLE_ID) y
-—query_4 
 
+—query_4 
 
 SELECT
 x.AUTHOR_ID AS 'AUTHOR_ID',
@@ -82,7 +82,7 @@ FROM(
     r.TITLE_ID, 
     r.AUTHOR_ID,
     SUM(r.ROYALTY) AS 'AGG_ROYALTY',
-    SUM (r.ADVANCE) AS 'AGG_ADVANCE'
+    r.ADVANCE AS 'AGG_ADVANCE'
     FROM( SELECT 
       s.title_id AS 'TITLE_ID',
       ta.au_id AS 'AUTHOR_ID',
@@ -117,7 +117,7 @@ FROM(
     r.TITLE_ID, 
     r.AUTHOR_ID,
     SUM(r.ROYALTY) AS 'AGG_ROYALTY',
-    SUM (r.ADVANCE) AS 'AGG_ADVANCE'
+    r.ADVANCE AS 'AGG_ADVANCE'
     FROM( SELECT 
       s.title_id AS 'TITLE_ID',
       ta.au_id AS 'AUTHOR_ID',
@@ -156,7 +156,7 @@ FROM(
     r.TITLE_ID, 
     r.AUTHOR_ID,
     SUM(r.ROYALTY) AS 'AGG_ROYALTY',
-    SUM (r.ADVANCE) AS 'AGG_ADVANCE'
+    r.ADVANCE AS 'AGG_ADVANCE'
     FROM( SELECT 
       s.title_id AS 'TITLE_ID',
       ta.au_id AS 'AUTHOR_ID',
@@ -197,7 +197,7 @@ y AS
   r.TITLE_ID, 
   r.AUTHOR_ID,
   SUM(r.ROYALTY) AS 'AGG_ROYALTY',
-  SUM (r.ADVANCE) AS 'AGG_ADVANCE'
+  r.ADVANCE AS 'AGG_ADVANCE'
   FROM r
   GROUP BY r.AUTHOR_ID, r.TITLE_ID),
 
